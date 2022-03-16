@@ -1,6 +1,6 @@
 # archlinux PKGBUILD for intel-gvt-linux
 
-##**WARNINGS**: 
+## **WARNINGS**: 
 
 1. This kernel is **NOT** supported by **ANYONE**
 2. This is a **"staging"** repository, aimed at developers and testers! (it's NOT a release kernel)
