@@ -27,7 +27,7 @@ makedepends=(
 )
 options=('!strip')
 source=(
-  url="https://github.com/intel/$_srcname/archive/refs/heads/$_srcbranch.zip"
+  "https://github.com/intel/$_srcname/archive/refs/heads/$_srcbranch.zip"
   config         # the main kernel config file
 )
 validpgpkeys=('SKIP')
