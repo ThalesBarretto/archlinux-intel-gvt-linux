@@ -1,12 +1,12 @@
 pkgbase=gvt-linux
 _srcname='gvt-linux'
-_srcbranch='gvt-staging' 	# the staging branch is the safer
-_srctag='' 			# intel gvt-linux has no tags, only branches
-_srcdir="$_srcname-$_srcbranch" # this is how github zips its files
+_srcbranch='gvt-staging'
+_srctag='gvt-staging-2022y-03m-07d-09h-44m-36s'
+_srcdir="$_srcname-$_srctag"
 url="https://github.com/intel/$_srcname"
 
 # we need the Makefile beforehand to set the proper version
-pkgver="$(MAKEFILE="$(curl --silent https://raw.githubusercontent.com/intel/$_srcname/$_srcbranch/Makefile)"
+pkgver="$(MAKEFILE="$(curl --silent https://raw.githubusercontent.com/intel/$_srcname/$_srctag/Makefile)"
 VERSION="$(	grep -e "VERSION = [[:digit:]*]"	<<<$MAKEFILE | sed 's/.*= // ; s/ //g')"
 PATCHLEVEL="$(	grep -e "PATCHLEVEL = [[:digit:]*]"	<<<$MAKEFILE | sed 's/.*= // ; s/ //g')"
 SUBLEVEL="$(	grep -e "SUBLEVEL = [[:digit:]*]"	<<<$MAKEFILE | sed 's/.*= // ; s/ //g')"
@@ -16,7 +16,7 @@ if [[ "$SUBLEVEL" == "0" ]]
 	else	PKGVER=$VERSION.$PATCHLEVEL.$SUBLEVEL$EXTRAVERSION
 fi
 echo -n $PKGVER)"
-pkgrel=1
+pkgrel=2
 pkgdesc='Linux'
 arch=(x86_64)
 license=(GPL2)
@@ -27,11 +27,12 @@ makedepends=(
 )
 options=('!strip')
 source=(
-  "https://github.com/intel/$_srcname/archive/refs/heads/$_srcbranch.zip"
+  "https://github.com/intel/$_srcname/archive/refs/tags/$_srctag.tar.gz"
+  #"https://github.com/intel/$_srcname/archive/refs/heads/gvt-staging.zip"
   config         # the main kernel config file
 )
 validpgpkeys=('SKIP')
-sha256sums=('dbe731373c7dabcb7d7aba3a2c2abb6e5e4e396325d49a4e349ba1f5369e38c4'
+sha256sums=('116963249e9190c1e9d323aa02c4abccd450e72cefa017a3df12a495218d1bb1'
             '937b8c12653d7b18be9b5673e9fa7fba9512c2b5c947e5d489a5e0749a0a8253')
 
 export KBUILD_BUILD_HOST=archlinux
