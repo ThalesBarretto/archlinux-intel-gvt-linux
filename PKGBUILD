@@ -1,22 +1,13 @@
 pkgbase=gvt-linux
 _srcname='gvt-linux'
 _srcbranch='gvt-staging'
-_srctag='gvt-staging-2022y-03m-07d-09h-44m-36s'
+_srctag='gvt-staging-2022y-03m-21d-13h-04m-46s'
 _srcdir="$_srcname-$_srctag"
 url="https://github.com/intel/$_srcname"
 
 # we need the Makefile beforehand to set the proper version
-pkgver="$(MAKEFILE="$(curl --silent https://raw.githubusercontent.com/intel/$_srcname/$_srctag/Makefile)"
-VERSION="$(	grep -e "VERSION = [[:digit:]*]"	<<<$MAKEFILE | sed 's/.*= // ; s/ //g')"
-PATCHLEVEL="$(	grep -e "PATCHLEVEL = [[:digit:]*]"	<<<$MAKEFILE | sed 's/.*= // ; s/ //g')"
-SUBLEVEL="$(	grep -e "SUBLEVEL = [[:digit:]*]"	<<<$MAKEFILE | sed 's/.*= // ; s/ //g')"
-EXTRAVERSION="$(grep -e "EXTRAVERSION = .*[[:digit:]*]"	<<<$MAKEFILE | sed 's/.*= // ; s/ //g ; s/-//')"
-if [[ "$SUBLEVEL" == "0" ]]
-	then	PKGVER=$VERSION.$PATCHLEVEL$EXTRAVERSION
-	else	PKGVER=$VERSION.$PATCHLEVEL.$SUBLEVEL$EXTRAVERSION
-fi
-echo -n $PKGVER)"
-pkgrel=2
+pkgver=5.17
+pkgrel=1
 pkgdesc='Linux'
 arch=(x86_64)
 license=(GPL2)
@@ -32,7 +23,7 @@ source=(
   config         # the main kernel config file
 )
 validpgpkeys=('SKIP')
-sha256sums=('116963249e9190c1e9d323aa02c4abccd450e72cefa017a3df12a495218d1bb1'
+sha256sums=('bfd8b9367a2d9e9663956b686d8b26c52ddb45f212775014e2fcb06e7e39cf2b'
             '937b8c12653d7b18be9b5673e9fa7fba9512c2b5c947e5d489a5e0749a0a8253')
 
 export KBUILD_BUILD_HOST=archlinux
@@ -45,7 +36,7 @@ prepare() {
   echo "Setting version..."
   scripts/setlocalversion --save-scmversion
   echo "-$pkgrel" > localversion.10-pkgrel
-  echo "${pkgbase#linux}" > localversion.20-pkgname
+  echo "${pkgbase#gvt-linux}" > localversion.20-pkgname
 
   local src
   for src in "${source[@]}"; do
