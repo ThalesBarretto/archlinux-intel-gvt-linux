@@ -1,7 +1,7 @@
 # archlinux PKGBUILD for intel/gvt-linux/gvt-staging
 
 ## PURPOSE
-Since kernel 5.12 up till now (5.16) there is an open [issue](https://github.com/intel/gvt-linux/issues/188) that may cause a Windows VM running under GVT-g to crash the host under some circunstaces.
+Since kernel 5.12 up till now (5.16) there is an open [issue](https://github.com/intel/gvt-linux/issues/188) that may cause a Windows VM running under GVT-g to crash the host under some circumstaces.
 
 The issue seems to be [solved](https://github.com/intel/gvt-linux/issues/188#issuecomment-1050091447) since this [commit](https://github.com/intel/gvt-linux/commit/11bd528bd71f1fd2e97a20e36b05f08602feb506) but it's currently still in staging and being monitored.
 
