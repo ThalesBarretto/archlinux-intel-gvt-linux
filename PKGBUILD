@@ -1,14 +1,12 @@
 pkgbase=gvt-linux
-_srcname='gvt-linux'
-_srcbranch='gvt-staging'
-_srctag='gvt-staging-2022y-03m-21d-13h-04m-46s'
-_srcdir="$_srcname-$_srctag"
-url="https://github.com/intel/$_srcname"
-
-# we need the Makefile beforehand to set the proper version
-pkgver=5.17
+pkgver=5.18rc1
 pkgrel=1
 pkgdesc='Linux'
+_srcname='gvt-linux'
+_srcbranch='gvt-staging'
+_srctag='gvt-staging-2022y-04m-08d-09h-14m-20s'
+_srcdir="$_srcname-$_srctag"
+url="https://github.com/intel/$_srcname"
 arch=(x86_64)
 license=(GPL2)
 makedepends=(
@@ -16,15 +14,14 @@ makedepends=(
   xmlto python-sphinx python-sphinx_rtd_theme graphviz imagemagick
   git
 )
-options=('!strip')
+options=('!strip' '!docs')
 source=(
   "https://github.com/intel/$_srcname/archive/refs/tags/$_srctag.tar.gz"
-  #"https://github.com/intel/$_srcname/archive/refs/heads/gvt-staging.zip"
-  config         # the main kernel config file
+  "https://raw.githubusercontent.com/archlinux/svntogit-packages/master/linux/repos/core-x86_64/config"
 )
 validpgpkeys=('SKIP')
-sha256sums=('bfd8b9367a2d9e9663956b686d8b26c52ddb45f212775014e2fcb06e7e39cf2b'
-            '937b8c12653d7b18be9b5673e9fa7fba9512c2b5c947e5d489a5e0749a0a8253')
+sha256sums=('c3679edd3059dcbde3b6100741d6873fd1e1dc6bef3550c2b18ac5a3956d5f62'
+            'bd1e57c15d4eb62024d2ee935b54d36e74e73b22c3800b45ecf9233521a9f74b')
 
 export KBUILD_BUILD_HOST=archlinux
 export KBUILD_BUILD_USER=$pkgbase
@@ -36,7 +33,7 @@ prepare() {
   echo "Setting version..."
   scripts/setlocalversion --save-scmversion
   echo "-$pkgrel" > localversion.10-pkgrel
-  echo "${pkgbase#gvt-linux}" > localversion.20-pkgname
+  echo "-${pkgbase%-linux}" > localversion.20-pkgname
 
   local src
   for src in "${source[@]}"; do
