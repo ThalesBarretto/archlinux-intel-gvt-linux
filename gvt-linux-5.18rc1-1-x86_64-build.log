@@ -1,0 +1,55 @@
+drivers/gpu/drm/i915/intel_gvt_mmio_table.c: In function ‘iterate_skl_plus_mmio’:
+drivers/gpu/drm/i915/intel_gvt_mmio_table.c:1021:16: error: ‘DMC_SSP_BASE’ undeclared (first use in this function)
+ 1021 |         MMIO_D(DMC_SSP_BASE);
+      |                ^~~~~~~~~~~~
+drivers/gpu/drm/i915/intel_gvt_mmio_table.c:17:63: note: in definition of macro ‘MMIO_F’
+   17 |         ret = iter->handle_mmio_cb(iter, i915_mmio_reg_offset(reg), s); \
+      |                                                               ^~~
+drivers/gpu/drm/i915/intel_gvt_mmio_table.c:1021:9: note: in expansion of macro ‘MMIO_D’
+ 1021 |         MMIO_D(DMC_SSP_BASE);
+      |         ^~~~~~
+drivers/gpu/drm/i915/intel_gvt_mmio_table.c:1021:16: note: each undeclared identifier is reported only once for each function it appears in
+ 1021 |         MMIO_D(DMC_SSP_BASE);
+      |                ^~~~~~~~~~~~
+drivers/gpu/drm/i915/intel_gvt_mmio_table.c:17:63: note: in definition of macro ‘MMIO_F’
+   17 |         ret = iter->handle_mmio_cb(iter, i915_mmio_reg_offset(reg), s); \
+      |                                                               ^~~
+drivers/gpu/drm/i915/intel_gvt_mmio_table.c:1021:9: note: in expansion of macro ‘MMIO_D’
+ 1021 |         MMIO_D(DMC_SSP_BASE);
+      |         ^~~~~~
+drivers/gpu/drm/i915/intel_gvt_mmio_table.c:1022:16: error: ‘DMC_HTP_SKL’ undeclared (first use in this function)
+ 1022 |         MMIO_D(DMC_HTP_SKL);
+      |                ^~~~~~~~~~~
+drivers/gpu/drm/i915/intel_gvt_mmio_table.c:17:63: note: in definition of macro ‘MMIO_F’
+   17 |         ret = iter->handle_mmio_cb(iter, i915_mmio_reg_offset(reg), s); \
+      |                                                               ^~~
+drivers/gpu/drm/i915/intel_gvt_mmio_table.c:1022:9: note: in expansion of macro ‘MMIO_D’
+ 1022 |         MMIO_D(DMC_HTP_SKL);
+      |         ^~~~~~
+drivers/gpu/drm/i915/intel_gvt_mmio_table.c:1023:16: error: ‘DMC_LAST_WRITE’ undeclared (first use in this function)
+ 1023 |         MMIO_D(DMC_LAST_WRITE);
+      |                ^~~~~~~~~~~~~~
+drivers/gpu/drm/i915/intel_gvt_mmio_table.c:17:63: note: in definition of macro ‘MMIO_F’
+   17 |         ret = iter->handle_mmio_cb(iter, i915_mmio_reg_offset(reg), s); \
+      |                                                               ^~~
+drivers/gpu/drm/i915/intel_gvt_mmio_table.c:1023:9: note: in expansion of macro ‘MMIO_D’
+ 1023 |         MMIO_D(DMC_LAST_WRITE);
+      |         ^~~~~~
+drivers/gpu/drm/i915/intel_gvt_mmio_table.c:1080:22: error: ‘DMC_MMIO_START_RANGE’ undeclared (first use in this function)
+ 1080 |         MMIO_F(_MMIO(DMC_MMIO_START_RANGE), 0x3000);
+      |                      ^~~~~~~~~~~~~~~~~~~~
+drivers/gpu/drm/i915/intel_gvt_mmio_table.c:17:63: note: in definition of macro ‘MMIO_F’
+   17 |         ret = iter->handle_mmio_cb(iter, i915_mmio_reg_offset(reg), s); \
+      |                                                               ^~~
+drivers/gpu/drm/i915/intel_gvt_mmio_table.c:1080:16: note: in expansion of macro ‘_MMIO’
+ 1080 |         MMIO_F(_MMIO(DMC_MMIO_START_RANGE), 0x3000);
+      |                ^~~~~
+make[4]: *** [scripts/Makefile.build:288: drivers/gpu/drm/i915/intel_gvt_mmio_table.o] Error 1
+make[3]: *** [scripts/Makefile.build:550: drivers/gpu/drm/i915] Error 2
+make[3]: *** Waiting for unfinished jobs....
+make[2]: *** [scripts/Makefile.build:550: drivers/gpu/drm] Error 2
+make[1]: *** [scripts/Makefile.build:550: drivers/gpu] Error 2
+make[1]: *** Waiting for unfinished jobs....
+make: *** [Makefile:1834: drivers] Error 2
+[1m[31m==> ERROR:(B[m[1m A failure occurred in build().(B[m
+[1m    Aborting...(B[m
