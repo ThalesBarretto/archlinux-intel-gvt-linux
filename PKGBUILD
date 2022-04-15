@@ -1,7 +1,7 @@
 pkgbase=gvt-linux
 _srcname='gvt-linux'
 _srcbranch='gvt-staging'
-_srctag='gvt-staging-2022y-04m-13d-06h-18m-12s'
+_srctag='gvt-staging-2022y-04m-13d-16h-03m-06s'
 _srcdir="$_srcname-$_srctag"
 url="https://github.com/intel/$_srcname"
 
@@ -23,7 +23,7 @@ source=(
   config         # the main kernel config file
 )
 validpgpkeys=('SKIP')
-sha256sums=('543529063575d0ad197fe222ccf678abcc383406a2ab050dadeac5a97c90c6f8'
+sha256sums=('0b6644c5a8050f817b5892c70684373ce5f87b0d5cf694044e3883463012fab4'
             'bd1e57c15d4eb62024d2ee935b54d36e74e73b22c3800b45ecf9233521a9f74b')
 
 export KBUILD_BUILD_HOST=archlinux
