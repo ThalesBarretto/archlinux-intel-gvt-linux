@@ -1,12 +1,12 @@
 pkgbase=gvt-linux
 _srcname='gvt-linux'
 _srcbranch='gvt-staging'
-_srctag='gvt-staging-2022y-03m-21d-13h-04m-46s'
+_srctag='gvt-staging-2022y-04m-13d-06h-18m-12s'
 _srcdir="$_srcname-$_srctag"
 url="https://github.com/intel/$_srcname"
 
 # we need the Makefile beforehand to set the proper version
-pkgver=5.17
+pkgver=5.18rc2
 pkgrel=1
 pkgdesc='Linux'
 arch=(x86_64)
@@ -23,8 +23,8 @@ source=(
   config         # the main kernel config file
 )
 validpgpkeys=('SKIP')
-sha256sums=('bfd8b9367a2d9e9663956b686d8b26c52ddb45f212775014e2fcb06e7e39cf2b'
-            '937b8c12653d7b18be9b5673e9fa7fba9512c2b5c947e5d489a5e0749a0a8253')
+sha256sums=('543529063575d0ad197fe222ccf678abcc383406a2ab050dadeac5a97c90c6f8'
+            'bd1e57c15d4eb62024d2ee935b54d36e74e73b22c3800b45ecf9233521a9f74b')
 
 export KBUILD_BUILD_HOST=archlinux
 export KBUILD_BUILD_USER=$pkgbase
