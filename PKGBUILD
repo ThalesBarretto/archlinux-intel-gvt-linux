@@ -7,7 +7,7 @@ url="https://github.com/intel/$_srcname"
 
 # we need the Makefile beforehand to set the proper version
 pkgver=5.18.16
-pkgrel=1
+pkgrel=3
 pkgdesc='Linux'
 arch=(x86_64)
 license=(GPL2)
@@ -16,7 +16,7 @@ makedepends=(
   xmlto python-sphinx python-sphinx_rtd_theme graphviz imagemagick
   git
 )
-options=('!strip' '!docs')
+options=('!strip')
 source=(
   "https://github.com/intel/$_srcname/archive/refs/tags/$_srctag.tar.gz"
   https://raw.githubusercontent.com/archlinux/svntogit-packages/9ff7f68d84b3e81d6a8dc30a0f91257a65a7f65b/repos/core-x86_64/config
@@ -25,7 +25,7 @@ source=(
 validpgpkeys=('SKIP')
 sha256sums=('648d31506044481891fee8d63a15f839170571c93b9a534e7999520103ec06d5'
             'bd1e57c15d4eb62024d2ee935b54d36e74e73b22c3800b45ecf9233521a9f74b'
-            '0d0d17bf7ff3de7bf3f1fee695810edcc3bfde0c06e24205555eefa89d12476f')
+            '70b8903f6b484d76efc06a1ef3f53b1c266b6c4af9665eabf1f817a7da8a9cab')
 
 export KBUILD_BUILD_HOST=archlinux
 export KBUILD_BUILD_USER=$pkgbase
@@ -57,7 +57,6 @@ prepare() {
 build() {
   cd $_srcdir
   make all
-#  make htmldocs
 }
 
 _package() {
