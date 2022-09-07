@@ -6,8 +6,8 @@ _srcdir="$_srcname-$_srctag"
 url="https://github.com/intel/$_srcname"
 
 # we need the Makefile beforehand to set the proper version
-pkgver=5.18.16
-pkgrel=3
+pkgver=5.18.19
+pkgrel=1
 pkgdesc='Linux'
 arch=(x86_64)
 license=(GPL2)
@@ -25,7 +25,7 @@ source=(
 validpgpkeys=('SKIP')
 sha256sums=('648d31506044481891fee8d63a15f839170571c93b9a534e7999520103ec06d5'
             'bd1e57c15d4eb62024d2ee935b54d36e74e73b22c3800b45ecf9233521a9f74b'
-            '70b8903f6b484d76efc06a1ef3f53b1c266b6c4af9665eabf1f817a7da8a9cab')
+            'c5c7a96c8a131eed30cc4b500429b27eb1bde70ea4f8a81f063fd4f7a41213e3')
 
 export KBUILD_BUILD_HOST=archlinux
 export KBUILD_BUILD_USER=$pkgbase
