@@ -1,3 +1,7 @@
+# DEPRECATED
+
+This tree is not necessary and the isse has been fixed mainline.
+
 # archlinux PKGBUILD for intel/gvt-linux/gvt-staging
 
 ## PURPOSE
